@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #646fd4;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #242f9b;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.info {
+  margin-top: 15px;
+}
+
+.navbar-brand {
+  font-size: 42px;
+  color: #fff;
+  cursor: none;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 800px;
+  height: 300px;
+  line-height: 15px;
+  border: 8px solid;
+  border-radius: 10px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0;
+}
+
+@media screen and (max-width: 560px) {
+  .wrapper {
+    font-size: 25px;
+  }
+}
+
+input {
+  width: 100px;
+}
+
+.calcButton {
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  background-color: #63b8ee;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #7cacde;
+  margin: 20px 0 40px 0;
+}
+.calcButton:hover {
+  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+  background-color: #468ccf;
+}
+.calcButton:active {
+  position: relative;
+  top: 1px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+  height: 60px;
+}
+
+footer div {
+  height: 55px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+footer container {
+  top: 50%;
+  justify-content: center;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+footer i {
+  color: #fff;
+}
+
+footer button {
+  width: 50px;
+  height: 50px;
+  margin-top: 30px;
+}
