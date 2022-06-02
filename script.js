@@ -4,7 +4,7 @@ let output = document.getElementById("output");
 
 let calcButton = document.getElementById("calcButton");
 
-calcButton.addEventListener("click", function () {
+let calc = calcButton.addEventListener("click", function () {
   output.innerHTML = calculate(weight.value, height.value);
 });
 

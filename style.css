@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   margin: 0;
 }
 
@@ -93,7 +93,7 @@ input {
 }
 
 footer {
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: -10px;
   height: 60px;
