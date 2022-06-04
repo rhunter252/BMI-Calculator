@@ -4,28 +4,156 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>BMI Calculator with JavaScript</title>
+    <!-- CSS only -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/P/HAJycnAD///8AZY9WAJXMgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAABEBAyIiIiIiAQEDAAAAAAIBAQMjIyMjIgEBAwAAAAACAQEDIyMjIyIBAQMAAAAAAgEBAyMjIyMiAQEDAAAAAAIBAQMDAwMzAgEBAwAAAAACAQEDBVVVVAIBAQMEREREAgEBAwAAAAACAQEDMzMzMzIBARAAAAAAABGAAAAAgAAAAIVQAACAAAAAhVAAAIAAAACFUAAAgAAAAIVAAACKiAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAA"
+      rel="icon"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Dad Jokes</title>
+
+    <script
+      src="https://kit.fontawesome.com/37ff0bb24c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <h1>Dad Jokes</h1>
-    <div class="container">
-      <h2>😂Don't laugh Challenge😂</h2>
-      <p class="jokeDisplay"></p>
-      <div class="btnDiv">
-        <button class="btn">Click me!</button>
+    <!-- Navbar Section -->
+    <nav class="navbar fixed-top">
+      <div class="container-fluid mb-20">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcompass1.org%2Fwp-content%2Fuploads%2F2015%2F06%2FCalculator_clipped_rev_1.png&f=1&nofb=1"
+            alt=""
+            width="50"
+            height="44"
+            class="d-inline-block align-text-top"
+          />
+          BMI Calculator
+        </a>
       </div>
-      <ul id="jokes"></ul>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <div class="container col-xxl-8 px-4 py-0 info">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img
+            src="https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+            class="d-block mx-lg-auto img-fluid"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="lc-block mb-3">
+            <div editable="rich">
+              <h2 class="fw-bold display-5">Body Mass Index (BMI)</h2>
+            </div>
+          </div>
+
+          <div class="lc-block mb-3">
+            <div editable="rich">
+              <p class="lead">
+                Body mass index (BMI) is an estimate of body fat based on height
+                and weight. It doesn’t measure body fat directly, but instead
+                uses an equation to make an approximation. BMI can help
+                determine whether a person is at an unhealthy or healthy weight.
+              </p>
+
+              <p class="lead">
+                A high BMI can be a sign of too much fat on the body, while a
+                low BMI can be a sign of too little fat on the body. The higher
+                a person’s BMI, the greater their chances of developing certain
+                serious conditions, such as heart disease, high blood pressure,
+                and diabetes. A very low BMI can also cause health problems,
+                including bone loss, decreased immune function, and anemia.
+              </p>
+            </div>
+          </div>
+
+          <!-- <div class="lc-block d-grid gap-2 d-md-flex justify-content-md-start">
+            <a class="btn btn-primary px-4 me-md-2" href="#" role="button"
+              >Click me, I'm a button</a
+            >
+            <a class="btn btn-outline-secondary px-4" href="#" role="button"
+              >Click me, I'm a button</a
+            >
+          </div> -->
+        </div>
+      </div>
     </div>
 
-    <script src="app.js"></script>
+    <!-- BMI Window -->
+    <div class="wrapper">
+      <p>
+        Weight in Pounds: <input type="text" id="weight" /><br /><span></span>
+      </p>
+
+      <p>
+        Height in Inches: &nbsp;
+        <input type="text" id="height" /><br /><span></span>
+      </p>
+
+      <button class="calcButton" id="calcButton">Calculate</button>
+      <p id="output"></p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center text-lg-start" style="background-color: #9ba3eb">
+      <!-- <div class="container d-flex justify-content-center py-5">
+        <button
+          type="button"
+          class="btn btn-light btn-lg btn-floating mx-2"
+          style="background-color: #9ba3eb"
+        >
+          <a href="https://github.com/"><i class="fa-brands fa-github"></i></a>
+        </button>
+        <button
+          type="button"
+          class="btn btn-light btn-lg btn-floating mx-2 ps-3"
+          style="background-color: #9ba3eb"
+        >
+          <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        </button>
+        <button
+          type="button"
+          class="btn btn-light btn-lg btn-floating mx-2"
+          style="background-color: #9ba3eb"
+        >
+          <a href="https://www.instagram.com/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </button>
+      </div> -->
+
+      <!-- Copyright -->
+      <div class="text-center text-white p-3" style="background-color: #9ba3eb">
+        © 2022 Copyright:
+        <a class="text-white footer-link" href="https://www.randyhunter1.com/"
+          >&nbsp;Randy Hunter</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- </div> -->
+    <!-- End of .container -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
